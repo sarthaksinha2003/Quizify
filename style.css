@@ -1,0 +1,96 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('./images for project/pexels-lilartsy-1213447.jpg');
+  background-size: cover;
+  background-color: #f0f0f0;
+  background-attachment: fixed;
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+  color: #ffffff;
+  margin-top: 20px;
+}
+
+#quiz-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: transparent;
+  /* background-color: rgba(0, 0, 0, 0.7); */
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 1.0);
+}
+
+#quiz-form label {
+  margin-bottom: 5px;
+  font-size: 1.1em;
+}
+
+#quiz-form input[type="number"],
+#quiz-form select {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #5dd7f3;
+  font-size: 1em;
+  transition: background-color 0.3s;
+}
+
+#quiz-form input[type="number"]:focus,
+#quiz-form select:focus {
+  background-color: rgba(255, 255, 255, 0.4);
+  outline: none;
+}
+
+#quiz-form button[type="submit"] {
+  width: 100%;
+  height: 40px;
+  background-color: #1590ac;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#quiz-form button[type="submit"]:hover {
+  background-color: #035365;
+}
+
+#quiz-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  /* background-color: rgba(0, 0, 0, 0.7); */
+  background-color:transparent;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 1.0);
+}
+
+#quiz-container h2 {
+  margin-top: 0;
+}
+
+#quiz-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#quiz-container li {
+  margin-bottom: 10px;
+}
+
+#quiz-container input[type="radio"] {
+  margin-right: 10px;
+}
+

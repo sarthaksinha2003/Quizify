@@ -1,0 +1,1061 @@
+[
+  {
+    "text": "Who was the first President of the United States?",
+    "options": [
+      "George Washington",
+      "Thomas Jefferson",
+      "Abraham Lincoln",
+      "John Adams"
+    ],
+    "correctAnswer": "George Washington",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "History"
+  },
+  {
+    "text": "The Great Wall of China was built during the Ming Dynasty.",
+    "correctAnswer": "True",
+    "level": "medium",
+    "type": "true/false",
+    "category": "History"
+  },
+  {
+    "text": "In which year did World War II begin?",
+    "options": ["1939", "1941", "1945", "1935"],
+    "correctAnswer": "1939",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "History"
+  },
+  {
+    "text": "Who was the first woman to fly solo across the Atlantic Ocean?",
+    "options": [
+      "Amelia Earhart",
+      "Harriet Quimby",
+      "Bessie Coleman",
+      "Jacqueline Cochran"
+    ],
+    "correctAnswer": "Amelia Earhart",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "History"
+  },
+  {
+    "text": "What ancient civilization built the pyramids?",
+    "options": ["Mesopotamians", "Romans", "Egyptians", "Greeks"],
+    "correctAnswer": "Egyptians",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "History"
+  },
+  {
+    "text": "The Berlin Wall fell in what year?",
+    "options": ["1987", "1989", "1991", "1993"],
+    "correctAnswer": "1989",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "History"
+  },
+  {
+    "text": "What was the main cause of the Civil War in the United States?",
+    "options": [
+      "Taxation",
+      "Slavery",
+      "Territorial Expansion",
+      "Trade Disputes"
+    ],
+    "correctAnswer": "Slavery",
+    "level": "hard",
+    "type": "multiple choice",
+    "category": "History"
+  },
+  {
+    "text": "Which empire was ruled by Genghis Khan?",
+    "options": [
+      "Mongol Empire",
+      "Ottoman Empire",
+      "Roman Empire",
+      "British Empire"
+    ],
+    "correctAnswer": "Mongol Empire",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "History"
+  },
+  {
+    "text": "The Titanic sank on its maiden voyage in what year?",
+    "options": ["1912", "1905", "1915", "1920"],
+    "correctAnswer": "1912",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "History"
+  },
+  {
+    "text": "What event triggered the start of World War I?",
+    "options": [
+      "Invasion of Poland",
+      "Assassination of Archduke Franz Ferdinand",
+      "Sinking of the Lusitania",
+      "Attack on Pearl Harbor"
+    ],
+    "correctAnswer": "Assassination of Archduke Franz Ferdinand",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "History"
+  },
+
+  {
+    "text": "What is the chemical symbol for water?",
+    "options": ["O2", "H2O", "CO2", "NaCl"],
+    "correctAnswer": "H2O",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "Humans share approximately 99% of their DNA with chimpanzees.",
+    "correctAnswer": "True",
+    "level": "medium",
+    "type": "true/false",
+    "category": "Science"
+  },
+  {
+    "text": "What gas do plants absorb from the atmosphere?",
+    "options": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Helium"],
+    "correctAnswer": "Carbon Dioxide",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the powerhouse of the cell?",
+    "options": ["Nucleus", "Ribosome", "Mitochondria", "Endoplasmic Reticulum"],
+    "correctAnswer": "Mitochondria",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the chemical formula for table salt?",
+    "options": ["NaCl", "KCl", "CaCO3", "MgO"],
+    "correctAnswer": "NaCl",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the most abundant gas in Earth's atmosphere?",
+    "options": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
+    "correctAnswer": "Nitrogen",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the speed of light?",
+    "options": ["300,000 km/s", "150,000 km/s", "1,000 km/s", "3,000 km/s"],
+    "correctAnswer": "300,000 km/s",
+    "level": "hard",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What organ is responsible for pumping blood throughout the body?",
+    "options": ["Liver", "Kidney", "Heart", "Lung"],
+    "correctAnswer": "Heart",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What type of animal is a dolphin?",
+    "options": ["Mammal", "Fish", "Reptile", "Amphibian"],
+    "correctAnswer": "Mammal",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+
+  {
+    "text": "What is the largest planet in our solar system?",
+    "options": ["Earth", "Jupiter", "Saturn", "Mars"],
+    "correctAnswer": "Jupiter",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What type of bond holds water molecules together?",
+    "options": ["Ionic", "Covalent", "Hydrogen", "Metallic"],
+    "correctAnswer": "Hydrogen",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the main gas found in the air we breathe?",
+    "options": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
+    "correctAnswer": "Nitrogen",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What do you call an animal that can live both on land and in water?",
+    "options": ["Mammal", "Amphibian", "Reptile", "Fish"],
+    "correctAnswer": "Amphibian",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the chemical formula for glucose?",
+    "options": ["C6H12O6", "C12H22O11", "C6H6", "C2H5OH"],
+    "correctAnswer": "C6H12O6",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "The Earth revolves around the Sun in what shape?",
+    "options": ["Circle", "Square", "Ellipse", "Triangle"],
+    "correctAnswer": "Ellipse",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the main function of white blood cells?",
+    "options": [
+      "Transport oxygen",
+      "Fight infections",
+      "Clot blood",
+      "Digest food"
+    ],
+    "correctAnswer": "Fight infections",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What do plants produce during photosynthesis?",
+    "options": ["Oxygen", "Carbon Dioxide", "Glucose", "Nitrogen"],
+    "correctAnswer": "Oxygen",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What part of the brain is responsible for balance?",
+    "options": ["Cerebrum", "Cerebellum", "Brainstem", "Hypothalamus"],
+    "correctAnswer": "Cerebellum",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the most common element in the universe?",
+    "options": ["Oxygen", "Carbon", "Hydrogen", "Helium"],
+    "correctAnswer": "Hydrogen",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+
+  {
+    "text": "Who invented the telephone?",
+    "options": [
+      "Thomas Edison",
+      "Alexander Graham Bell",
+      "Nikola Tesla",
+      "Guglielmo Marconi"
+    ],
+    "correctAnswer": "Alexander Graham Bell",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the hardest natural substance on Earth?",
+    "options": ["Gold", "Diamond", "Iron", "Quartz"],
+    "correctAnswer": "Diamond",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "Which planet is known as the Red Planet?",
+    "options": ["Venus", "Mars", "Jupiter", "Saturn"],
+    "correctAnswer": "Mars",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the main organ of the circulatory system?",
+    "options": ["Lungs", "Heart", "Kidney", "Liver"],
+    "correctAnswer": "Heart",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "How many bones are in the adult human body?",
+    "options": ["206", "215", "201", "200"],
+    "correctAnswer": "206",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What element does 'O' represent on the periodic table?",
+    "options": ["Osmium", "Oxygen", "Gold", "Silver"],
+    "correctAnswer": "Oxygen",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the boiling point of water?",
+    "options": ["0°C", "50°C", "100°C", "150°C"],
+    "correctAnswer": "100°C",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "Which planet is closest to the Sun?",
+    "options": ["Venus", "Earth", "Mercury", "Mars"],
+    "correctAnswer": "Mercury",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What do bees collect from flowers?",
+    "options": ["Nectar", "Pollen", "Water", "Honey"],
+    "correctAnswer": "Nectar",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the primary function of the lungs?",
+    "options": [
+      "To pump blood",
+      "To filter waste",
+      "To exchange gases",
+      "To produce hormones"
+    ],
+    "correctAnswer": "To exchange gases",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+
+  {
+    "text": "What is the chemical symbol for gold?",
+    "options": ["Ag", "Au", "Pb", "Fe"],
+    "correctAnswer": "Au",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the primary gas in the Earth's atmosphere?",
+    "options": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
+    "correctAnswer": "Nitrogen",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the powerhouse of the cell?",
+    "options": ["Mitochondria", "Nucleus", "Ribosome", "Golgi apparatus"],
+    "correctAnswer": "Mitochondria",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What type of animal is a frog?",
+    "options": ["Mammal", "Reptile", "Amphibian", "Fish"],
+    "correctAnswer": "Amphibian",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the primary function of the roots of a plant?",
+    "options": [
+      "To absorb water",
+      "To photosynthesize",
+      "To produce seeds",
+      "To support the plant"
+    ],
+    "correctAnswer": "To absorb water",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What organ in the human body is responsible for detoxification?",
+    "options": ["Liver", "Kidney", "Lung", "Heart"],
+    "correctAnswer": "Liver",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the primary function of the leaves of a plant?",
+    "options": [
+      "To absorb water",
+      "To produce food",
+      "To support the plant",
+      "To store nutrients"
+    ],
+    "correctAnswer": "To produce food",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the basic unit of life?",
+    "options": ["Tissue", "Organ", "Cell", "System"],
+    "correctAnswer": "Cell",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What type of reaction is photosynthesis?",
+    "options": ["Exothermic", "Endothermic", "Chemical", "Physical"],
+    "correctAnswer": "Endothermic",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the primary source of energy for the Earth?",
+    "options": ["The Moon", "The Earth itself", "The Sun", "The stars"],
+    "correctAnswer": "The Sun",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+
+  {
+    "text": "Who developed the theory of relativity?",
+    "options": [
+      "Isaac Newton",
+      "Albert Einstein",
+      "Galileo Galilei",
+      "Stephen Hawking"
+    ],
+    "correctAnswer": "Albert Einstein",
+    "level": "hard",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the most abundant element in the human body?",
+    "options": ["Carbon", "Hydrogen", "Oxygen", "Nitrogen"],
+    "correctAnswer": "Oxygen",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What process do plants use to make food?",
+    "options": [
+      "Photosynthesis",
+      "Respiration",
+      "Fermentation",
+      "Transpiration"
+    ],
+    "correctAnswer": "Photosynthesis",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "Which vitamin is produced when a person is exposed to sunlight?",
+    "options": ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin E"],
+    "correctAnswer": "Vitamin D",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the largest organ in the human body?",
+    "options": ["Heart", "Liver", "Skin", "Lung"],
+    "correctAnswer": "Skin",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the common name for the vitamin B7?",
+    "options": ["Folic Acid", "Biotin", "Ascorbic Acid", "Riboflavin"],
+    "correctAnswer": "Biotin",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the term for the change of state from liquid to gas?",
+    "options": ["Condensation", "Evaporation", "Freezing", "Sublimation"],
+    "correctAnswer": "Evaporation",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the most commonly used gas in the food industry for preserving food?",
+    "options": ["Carbon Dioxide", "Nitrogen", "Oxygen", "Argon"],
+    "correctAnswer": "Nitrogen",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the main function of the skeletal system?",
+    "options": [
+      "To produce blood",
+      "To provide structure",
+      "To move the body",
+      "To protect organs"
+    ],
+    "correctAnswer": "To provide structure",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "Which part of the cell contains genetic material?",
+    "options": ["Cytoplasm", "Cell Membrane", "Nucleus", "Ribosome"],
+    "correctAnswer": "Nucleus",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+
+  {
+    "text": "What is the process of cell division called?",
+    "options": ["Mitosis", "Meiosis", "Binary Fission", "Cell Cycle"],
+    "correctAnswer": "Mitosis",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the primary function of red blood cells?",
+    "options": [
+      "Transport oxygen",
+      "Fight infections",
+      "Clot blood",
+      "Digest food"
+    ],
+    "correctAnswer": "Transport oxygen",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the study of living organisms called?",
+    "options": ["Biology", "Chemistry", "Physics", "Geology"],
+    "correctAnswer": "Biology",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the main component of the cell membrane?",
+    "options": ["Carbohydrates", "Proteins", "Phospholipids", "Nucleic Acids"],
+    "correctAnswer": "Phospholipids",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the largest organ inside the human body?",
+    "options": ["Heart", "Brain", "Liver", "Lung"],
+    "correctAnswer": "Liver",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the primary role of the digestive system?",
+    "options": [
+      "To circulate blood",
+      "To provide oxygen",
+      "To break down food",
+      "To remove waste"
+    ],
+    "correctAnswer": "To break down food",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the main function of the immune system?",
+    "options": [
+      "To provide energy",
+      "To protect against disease",
+      "To regulate temperature",
+      "To produce hormones"
+    ],
+    "correctAnswer": "To protect against disease",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the basic building block of proteins?",
+    "options": ["Fatty acids", "Amino acids", "Monosaccharides", "Nucleotides"],
+    "correctAnswer": "Amino acids",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What type of bond holds the two strands of DNA together?",
+    "options": [
+      "Ionic bond",
+      "Covalent bond",
+      "Hydrogen bond",
+      "Van der Waals bond"
+    ],
+    "correctAnswer": "Hydrogen bond",
+    "level": "hard",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the primary function of the pancreas?",
+    "options": [
+      "To produce insulin",
+      "To digest proteins",
+      "To absorb nutrients",
+      "To filter blood"
+    ],
+    "correctAnswer": "To produce insulin",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the process by which plants lose water called?",
+    "options": ["Transpiration", "Evaporation", "Condensation", "Percolation"],
+    "correctAnswer": "Transpiration",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+  {
+    "text": "What is the main type of tissue in the brain?",
+    "options": ["Epithelial", "Connective", "Muscle", "Nervous"],
+    "correctAnswer": "Nervous",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Science"
+  },
+
+  {
+    "text": "Which country hosted the 2016 Summer Olympics?",
+    "options": ["China", "Brazil", "Greece", "United Kingdom"],
+    "correctAnswer": "Brazil",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Sports"
+  },
+  {
+    "text": "Who holds the record for the most goals in World Cup history?",
+    "options": ["Pele", "Ronaldo", "Marta", "Diego Maradona"],
+    "correctAnswer": "Ronaldo",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Sports"
+  },
+  {
+    "text": "In which sport would you perform a slam dunk?",
+    "options": ["Soccer", "Basketball", "Tennis", "Baseball"],
+    "correctAnswer": "Basketball",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Sports"
+  },
+  {
+    "text": "Which country won the FIFA World Cup in 2018?",
+    "options": ["Germany", "Brazil", "France", "Argentina"],
+    "correctAnswer": "France",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Sports"
+  },
+  {
+    "text": "What is the maximum number of players allowed on a soccer team?",
+    "options": ["9", "10", "11", "12"],
+    "correctAnswer": "11",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Sports"
+  },
+  {
+    "text": "Which athlete is known as 'The Greatest of All Time' in boxing?",
+    "options": [
+      "Mike Tyson",
+      "Muhammad Ali",
+      "Floyd Mayweather",
+      "Manny Pacquiao"
+    ],
+    "correctAnswer": "Muhammad Ali",
+    "level": "hard",
+    "type": "multiple choice",
+    "category": "Sports"
+  },
+  {
+    "text": "What is the national sport of Japan?",
+    "options": ["Judo", "Baseball", "Sumo Wrestling", "Soccer"],
+    "correctAnswer": "Sumo Wrestling",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Sports"
+  },
+  {
+    "text": "Which city hosted the Winter Olympics in 2014?",
+    "options": ["Sochi", "Vancouver", "Pyeongchang", "Salt Lake City"],
+    "correctAnswer": "Sochi",
+    "level": "hard",
+    "type": "multiple choice",
+    "category": "Sports"
+  },
+  {
+    "text": "What is the distance of a marathon in miles?",
+    "options": ["24", "25", "26.2", "27"],
+    "correctAnswer": "26.2",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Sports"
+  },
+  {
+    "text": "Which sport is known as the 'king of sports'?",
+    "options": ["Basketball", "Cricket", "Soccer", "Tennis"],
+    "correctAnswer": "Soccer",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Sports"
+  },
+  {
+    "text": "Who wrote the play 'Romeo and Juliet'?",
+    "options": [
+      "Charles Dickens",
+      "Mark Twain",
+      "William Shakespeare",
+      "Jane Austen"
+    ],
+    "correctAnswer": "William Shakespeare",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Literature"
+  },
+  {
+    "text": "What is the title of the first Harry Potter book?",
+    "options": [
+      "Harry Potter and the Chamber of Secrets",
+      "Harry Potter and the Philosopher's Stone",
+      "Harry Potter and the Goblet of Fire",
+      "Harry Potter and the Prisoner of Azkaban"
+    ],
+    "correctAnswer": "Harry Potter and the Philosopher's Stone",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Literature"
+  },
+  {
+    "text": "Who wrote 'Pride and Prejudice'?",
+    "options": [
+      "Emily Bronte",
+      "Jane Austen",
+      "Charlotte Bronte",
+      "Virginia Woolf"
+    ],
+    "correctAnswer": "Jane Austen",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Literature"
+  },
+  {
+    "text": "Which novel begins with the line 'Call me Ishmael'?",
+    "options": [
+      "Moby Dick",
+      "The Great Gatsby",
+      "1984",
+      "To Kill a Mockingbird"
+    ],
+    "correctAnswer": "Moby Dick",
+    "level": "hard",
+    "type": "multiple choice",
+    "category": "Literature"
+  },
+  {
+    "text": "What is the main theme of George Orwell's '1984'?",
+    "options": ["Friendship", "Revolution", "Dystopia", "Love"],
+    "correctAnswer": "Dystopia",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Literature"
+  },
+  {
+    "text": "Who is the author of 'The Catcher in the Rye'?",
+    "options": [
+      "Harper Lee",
+      "J.D. Salinger",
+      "F. Scott Fitzgerald",
+      "Ernest Hemingway"
+    ],
+    "correctAnswer": "J.D. Salinger",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Literature"
+  },
+  {
+    "text": "In which book would you find the character 'Atticus Finch'?",
+    "options": [
+      "The Great Gatsby",
+      "To Kill a Mockingbird",
+      "Pride and Prejudice",
+      "Moby Dick"
+    ],
+    "correctAnswer": "To Kill a Mockingbird",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Literature"
+  },
+  {
+    "text": "What is the genre of the novel 'The Road' by Cormac McCarthy?",
+    "options": [
+      "Science Fiction",
+      "Fantasy",
+      "Post-apocalyptic",
+      "Historical Fiction"
+    ],
+    "correctAnswer": "Post-apocalyptic",
+    "level": "hard",
+    "type": "multiple choice",
+    "category": "Literature"
+  },
+  {
+    "text": "Which poet is known for the line 'Because I could not stop for Death'? ",
+    "options": [
+      "Emily Dickinson",
+      "Robert Frost",
+      "Walt Whitman",
+      "Sylvia Plath"
+    ],
+    "correctAnswer": "Emily Dickinson",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Literature"
+  },
+  {
+    "text": "Who wrote the novel 'The Picture of Dorian Gray'?",
+    "options": ["Oscar Wilde", "Charles Dickens", "Leo Tolstoy", "Mark Twain"],
+    "correctAnswer": "Oscar Wilde",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Literature"
+  },
+  {
+    "text": "What is the main character's name in 'The Hunger Games'?",
+    "options": [
+      "Katniss Everdeen",
+      "Hermione Granger",
+      "Bella Swan",
+      "Luna Lovegood"
+    ],
+    "correctAnswer": "Katniss Everdeen",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Literature"
+  },
+  {
+    "text": "Who is the author of the famous novel '1984'?",
+    "options": [
+      "George Orwell",
+      "Aldous Huxley",
+      "Ray Bradbury",
+      "Philip K. Dick"
+    ],
+    "correctAnswer": "George Orwell",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Literature"
+  },
+  {
+    "text": "Who directed the movie 'Inception'?",
+    "options": [
+      "Christopher Nolan",
+      "Steven Spielberg",
+      "Martin Scorsese",
+      "Quentin Tarantino"
+    ],
+    "correctAnswer": "Christopher Nolan",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Movies"
+  },
+  {
+    "text": "Which film won the Academy Award for Best Picture in 1994?",
+    "options": [
+      "Pulp Fiction",
+      "Forrest Gump",
+      "The Shawshank Redemption",
+      "Braveheart"
+    ],
+    "correctAnswer": "Forrest Gump",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Movies"
+  },
+  {
+    "text": "In which movie does the character 'Darth Vader' appear?",
+    "options": ["Star Trek", "Star Wars", "The Matrix", "Blade Runner"],
+    "correctAnswer": "Star Wars",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Movies"
+  },
+  {
+    "text": "Which actress played Katniss Everdeen in 'The Hunger Games' series?",
+    "options": [
+      "Emma Watson",
+      "Jennifer Lawrence",
+      "Kristen Stewart",
+      "Shailene Woodley"
+    ],
+    "correctAnswer": "Jennifer Lawrence",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Movies"
+  },
+  {
+    "text": "What is the highest-grossing film of all time (as of 2021)?",
+    "options": [
+      "Titanic",
+      "Avatar",
+      "Avengers: Endgame",
+      "Star Wars: The Force Awakens"
+    ],
+    "correctAnswer": "Avatar",
+    "level": "hard",
+    "type": "multiple choice",
+    "category": "Movies"
+  },
+  {
+    "text": "What is the name of the fictional African country in 'Black Panther'?",
+    "options": ["Wakanda", "Zamunda", "Genosha", "Narnia"],
+    "correctAnswer": "Wakanda",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Movies"
+  },
+  {
+    "text": "Which film features the quote, 'Here's looking at you, kid.'?",
+    "options": [
+      "Casablanca",
+      "Gone with the Wind",
+      "Citizen Kane",
+      "The Godfather"
+    ],
+    "correctAnswer": "Casablanca",
+    "level": "hard",
+    "type": "multiple choice",
+    "category": "Movies"
+  },
+  {
+    "text": "Who starred as the lead character in the movie 'The Terminator'?",
+    "options": [
+      "Bruce Willis",
+      "Arnold Schwarzenegger",
+      "Sylvester Stallone",
+      "Harrison Ford"
+    ],
+    "correctAnswer": "Arnold Schwarzenegger",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Movies"
+  },
+  {
+    "text": "What year was the original 'Jurassic Park' released?",
+    "options": ["1990", "1993", "1996", "1999"],
+    "correctAnswer": "1993",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Movies"
+  },
+  {
+    "text": "Which movie features a character named 'Andy Dufresne'?",
+    "options": [
+      "The Green Mile",
+      "The Shawshank Redemption",
+      "Fight Club",
+      "Se7en"
+    ],
+    "correctAnswer": "The Shawshank Redemption",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Movies"
+  },
+  {
+    "text": "What is the main theme of the movie 'The Godfather'?",
+    "options": ["Love", "Family", "Friendship", "War"],
+    "correctAnswer": "Family",
+    "level": "medium",
+    "type": "multiple choice",
+    "category": "Movies"
+  },
+  {
+    "text": "Which film is known for the quote, 'I'll be back.'?",
+    "options": [
+      "Terminator 2: Judgment Day",
+      "The Terminator",
+      "Predator",
+      "RoboCop"
+    ],
+    "correctAnswer": "The Terminator",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Movies"
+  },
+  {
+    "text": "Who won an Academy Award for Best Actor for his role in 'The Revenant'?",
+    "options": [
+      "Matthew McConaughey",
+      "Leonardo DiCaprio",
+      "Brad Pitt",
+      "Joaquin Phoenix"
+    ],
+    "correctAnswer": "Leonardo DiCaprio",
+    "level": "hard",
+    "type": "multiple choice",
+    "category": "Movies"
+  },
+  {
+    "text": "What is the name of the computer system in '2001: A Space Odyssey'?",
+    "options": ["HAL 9000", "WALL-E", "Samantha", "GLaDOS"],
+    "correctAnswer": "HAL 9000",
+    "level": "hard",
+    "type": "multiple choice",
+    "category": "Movies"
+  },
+  {
+    "text": "In which animated film would you find the character 'Simba'?",
+    "options": ["Aladdin", "Mulan", "The Lion King", "Frozen"],
+    "correctAnswer": "The Lion King",
+    "level": "easy",
+    "type": "multiple choice",
+    "category": "Movies"
+  }
+]

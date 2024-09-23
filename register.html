@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="register.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/dist/boxicons.js' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+  <div class="wrapper">
+    <form id="registerForm">
+      <h1>Register </h1><br><br>
+      <h2>Username:</h2>
+      <div class="input-box">
+        <input type="text" id="username" placeholder="Username" required>
+        <i class="fa-solid fa-user"></i>
+      </div>
+      <h2>E-Mail:</h2>
+      <div class="input-box">
+        <input type="email" id="email" placeholder="E-Mail" required>
+        <i class="fa-solid fa-envelope"></i>
+      </div>
+      <h2>Password:</h2>
+      <div class="input-box">
+        <input type="password" id="password" placeholder="Password" required>
+        <i class="fa-solid fa-lock"></i>
+      </div>
+      <div class="remember-forgot">
+        <label><input type="checkbox">Remember Me</label>
+        <a href="#">Forgot Password</a>
+      </div>
+      <button type="submit" class="btn">Register</button>
+      <div class="register-link">
+        <p>Already have an account! <a href="./login.html">Login</a></p>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', async function(event) {
+      event.preventDefault();  // Prevents default form submission
+
+      const username = document.getElementById('username').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      // Make the request to the backend for registration
+      const response = await fetch('http://localhost:5000/api/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, email, password })
+      });
+
+      const data = await response.json();
+
+      // Handle registration response
+      if (data.status === 'ok') {
+        alert('Registration successful! Please log in.');
+        window.location.href = './login.html';  // Redirect to login page
+      } else {
+        alert(data.error || 'Registration failed!');
+      }
+    });
+  </script>
+</body>
+</html>

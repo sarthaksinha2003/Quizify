@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Website</title>
+    <link rel="stylesheet" href="Main.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Quizzify</div>
+        <nav>
+            <ul>
+                <li id="loginLink"><a href="./login.html">Login</a></li>
+                <li><a href="./register.html">Register</a></li>
+                <li><a href="#">Leaderboard</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="quiz-categories">
+            <h2>Explore Quizzes</h2>
+            <ul>
+                <li>
+                    <img src="./images for project/history.jpg" alt="History">
+                    <h3>History</h3>
+                    <p>Test your knowledge of historical events and figures</p>
+                    <button class="outline-button" id="historyButton">Start Quiz</button>
+                </li>
+                <li>
+                    <img src="./images for project/science.png" alt="Science">
+                    <h3>Science</h3>
+                    <p>Explore the wonders of science and technology</p>
+                    <button class="outline-button" id="scienceButton">Start Quiz</button>
+                </li>
+                <li>
+                    <img src="./images for project/sports.jfif" alt="Sports">
+                    <h3>Sports</h3>
+                    <p>Put your sports knowledge to the test</p>
+                    <button class="outline-button" id="sportsButton">Start Quiz</button>
+                </li>
+                <li>
+                    <img src="./images for project/lit.png" alt="Literature">
+                    <h3>Literature</h3>
+                    <p>Challenge your knowledge of literature genres and authors.</p>
+                    <button class="outline-button" id="musicButton">Start Quiz</button>
+                </li>
+            </ul>
+        </section>
+
+        <section class="featured-quiz">
+            <h2>Featured Quiz</h2>
+            <img src="./images for project/bollywood.png" alt="Featured Quiz">
+            <h3>The Ultimate Movie Trivia</h3>
+            <p>Test your knowledge of movies and film history</p>
+            <button class="outline-button" id="movieButton">Start Quiz</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Quizzify</p>
+    </footer>
+
+    <script>
+        // Function to check if the user is logged in
+        function isLoggedIn() {
+            return sessionStorage.getItem('loggedIn') === 'true';
+        }
+
+        // Hide login link if user is logged in
+        if (isLoggedIn()) {
+            document.getElementById('loginLink').style.display = 'none';
+        }
+
+        // Function to start quiz after checking if logged in
+        function startQuiz(quizName) {
+            if (isLoggedIn()) {
+                window.location.href = 'index.html'; // Redirect to index.html instead
+            } else {
+                alert("Please log in to start the quiz.");
+                window.location.href = './login.html'; // Redirect to login page if not logged in
+            }
+        }
+
+        // Event listeners for buttons
+        document.getElementById('historyButton').addEventListener('click', () => startQuiz('history'));
+        document.getElementById('scienceButton').addEventListener('click', () => startQuiz('science'));
+        document.getElementById('sportsButton').addEventListener('click', () => startQuiz('sports'));
+        document.getElementById('musicButton').addEventListener('click', () => startQuiz('music'));
+        document.getElementById('movieButton').addEventListener('click', () => startQuiz('movieTrivia'));
+    </script>
+</body>
+</html>
