@@ -1,11 +1,12 @@
 body {
-    background: linear-gradient(to left, #253744,#e0ddd8);
-  background-size: cover;
-  background-position: center;
-  height: 100%;
-  margin: 0;
-    font-family: Arial, sans-serif;
+    background: linear-gradient(to left, #253744, #e0ddd8);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
     margin: 0;
+    font-family: Arial, sans-serif;
     padding: 0;
 }
 
@@ -17,19 +18,19 @@ header {
     justify-content: space-between;
     align-items: center;
 }
+
 .outline-button {
-    border: 1px solid #ccc; /* outline border */
-    background-color: transparent; /* transparent background */
-    padding: 10px 20px; /* add some padding */
-    border-radius: 5px; /* rounded corners */
-    cursor: pointer; /* change cursor on hover */
-  }
-  
-  .outline-button:hover {
-    border-color: #309e99; /* change border color on hover */
-    background-color: #185061; 
-    cursor: pointer;/* add a slight background color on hover */
-  }
+    border: 1px solid #ccc;
+    background-color: transparent;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.outline-button:hover {
+    border-color: #309e99;
+    background-color: #185061;
+}
 
 .logo {
     font-size: 24px;
@@ -43,7 +44,6 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    
 }
 
 nav li {
@@ -59,13 +59,11 @@ nav a {
 main {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
     align-items: center;
     padding: 2em;
-    
     margin-top: 50px;
-    /* background-color: antiquewhite; */
     border-radius: 25px;
-
 }
 
 .quiz-categories ul {
@@ -93,6 +91,7 @@ main {
     object-fit: cover;
     border-radius: 10px 10px 0 0;
 }
+
 .quiz-categories button {
     background-color: #333;
     border-radius: 25px;
@@ -102,6 +101,7 @@ main {
     font-size: 18px;
     cursor: pointer;
 }
+
 .featured-quiz {
     margin-top: 40px;
     background-color: #fff;
@@ -126,7 +126,6 @@ main {
     font-size: 18px;
     cursor: pointer;
     border-radius: 25px;
-
 }
 
 footer {
@@ -135,4 +134,19 @@ footer {
     padding: 10px;
     text-align: center;
     clear: both;
+    margin-top: auto; 
+}
+.social-links {
+    margin-top: 20px;
+}
+
+.social-icon {
+    font-size: 2em;
+    margin: 0 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #309e99;
 }

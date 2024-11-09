@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const User = require('./models/User'); // Ensure that User schema is properly defined
+const Question = require('./models/Question'); // Import the Question model
 
 const app = express();
 const JWT_SECRET = 'secret123'; // Store securely in an environment variable
@@ -66,6 +67,17 @@ app.post('/api/login', async (req, res) => {
     } catch (err) {
         console.error(err);
         res.status(500).json({ status: 'error', error: 'Login failed' });
+    }
+});
+
+// Route to get all questions
+app.get('/api/questions', async (req, res) => {
+    try {
+        const questions = await Question.find();
+        res.json({ status: 'ok', questions });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ status: 'error', error: 'Failed to retrieve questions' });
     }
 });
 

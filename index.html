@@ -1,50 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Website</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="hi"> 
-        <h1>Go ahead and Test it..</h1>
-        <form id="quiz-form">
-            <label for="num-questions">Number of questions:</label>
-            <input type="number" id="num-questions" value="5" max="10">
-            <br>
-            <label for="quiz-level">Quiz level:</label>
-            <select id="quiz-level">
-                <option value="all">Select level of Quiz</option>
-                <option value="easy">Easy</option>
-                <option value="medium">Medium</option>
-                <option value="hard">Hard</option>
-            </select>
-            <br>
-            <label for="question-type">Question type:</label>
-            <select id="question-type">
-                <option value="all">Select type of question</option>
-                <option value="multiple-choice">Multiple choice</option>
-                <option value="true-false">True/False</option>
-                <option value="open-ended">Open-ended</option>
-            </select>
-            <br>
-            <label for="category">Category:</label>
-            <select id="category">
-                <option value="all">Select Category</option>
-                <option value="History">History</option>
-                <option value="Science">Science</option>
-                <option value="Sports">Sports</option>
-                <option value="Literature">Literature</option>
-                <option value="The Ultimate Movie Trivia">The Ultimate Movie Trivia</option>
-            </select>
-            <br>
-            <button type="submit">Start Quiz</button>
-        </form>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hi">
+      <h1>Test Your Knowledge: Dive into the Ultimate Quiz Challenge!</h1>
+      <form id="quiz-form">
+        <label for="num-questions">Number of questions:</label>
+        <input type="number" id="num-questions" value="5" min="1" />
+        <br />
+        <label for="quiz-level">Quiz level:</label>
+        <select id="quiz-level">
+          <option value="all">Select level of Quiz</option>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+        <br />
+        <label for="question-type">Question type:</label>
+        <select id="question-type">
+          <option value="all">Select type of question</option>
+          <option value="multiple-choice">Multiple-choice</option>
+          <option value="true-false">True-False</option>
+        </select>
+        <br />
+        <div class="button-container">
+          <button type="submit">Start Quiz</button>
+        </div>
+      </form>
 
-        <div id="quiz-container" style="display: none;"></div> <!-- Initially hidden -->
-    </div> 
+      <div id="quiz-container" style="display: none">
+        <div id="questions"></div>
+        <div class="button-container">
+          <button id="submit-quiz" style="display: none">Submit Quiz</button>
+        </div>
+        <div id="score" style="display: none"></div>
+      </div>
+    </div>
 
-    <script src="script.js"></script>
-</body>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const quizForm = document.getElementById("quiz-form");
+        const submitQuizButton = document.getElementById("submit-quiz");
+        const quizContainer = document.getElementById("quiz-container");
+        const scoreContainer = document.getElementById("score");
+        let questions = [];
+
+        // Capture category from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get("category");
+
+        quizForm.addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          const numQuestions = document.getElementById("num-questions").value;
+          const quizLevel = document.getElementById("quiz-level").value;
+          const questionType = document.getElementById("question-type").value;
+
+          if (quizLevel === "all" || questionType === "all") {
+            alert("Please select a valid quiz level and question type.");
+            return;
+          }
+
+          console.log("Requesting questions with params:", {
+            numQuestions,
+            quizLevel,
+            questionType,
+            category,
+          });
+
+          try {
+            const response = await fetch(
+              `http://localhost:3000/get-questions?num=${numQuestions}&level=${quizLevel}&type=${questionType}&category=${category}`
+            );
+            const questionsData = await response.json();
+
+            if (response.ok) {
+              questions = questionsData;
+              if (questions.length > 0) {
+                displayQuiz(questions);
+              } else {
+                alert("No questions found based on your criteria.");
+              }
+            } else {
+              alert("Error fetching questions: " + questionsData.message);
+            }
+          } catch (error) {
+            console.error("Failed to fetch questions:", error);
+            alert("Error fetching questions.");
+          }
+        });
+
+        submitQuizButton.addEventListener("click", function () {
+          calculateScore();
+        });
+
+        function displayQuiz(questions) {
+          quizForm.style.display = "none";
+          quizContainer.style.display = "block";
+          const questionsContainer = document.getElementById("questions");
+          questionsContainer.innerHTML = "";
+
+          questions.forEach((question, index) => {
+            const questionElement = document.createElement("div");
+            questionElement.innerHTML = `<p>${index + 1}. ${question.questionText}</p>`;
+
+            if (question.options) {
+              question.options.forEach((option) => {
+                questionElement.innerHTML += ` 
+                                <label>
+                                    <input type="radio" name="question-${index}" value="${option}">
+                                    ${option}
+                                </label><br>`;
+              });
+            } else {
+              questionElement.innerHTML += ` 
+                            <label>
+                                <input type="radio" name="question-${index}" value="true"> True
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question-${index}" value="false"> False
+                            </label><br>`;
+            }
+            questionsContainer.appendChild(questionElement);
+          });
+
+          submitQuizButton.style.display = "inline-block";
+        }
+
+        function calculateScore() {
+          let score = 0;
+          questions.forEach((question, index) => {
+            const selectedOption = document.querySelector(`input[name="question-${index}"]:checked`);
+            if (selectedOption && selectedOption.value === question.correctAnswer) {
+              score++;
+            }
+          });
+
+          scoreContainer.innerHTML = `
+            <div class="score-content">
+                <br>
+                <h2> Your Score: </h2>
+                <p class="score-text">You scored <span>${score}</span> out of ${questions.length}!</p>
+                <p class="score-feedback">${getFeedback(score, questions.length)}</p>
+            </div>
+          `;
+          scoreContainer.classList.add("score-container-visible");
+          scoreContainer.style.display = 'block'; // Make sure the score container is visible
+          submitQuizButton.style.display = "none"; // Hide Submit button after submitting
+        }
+
+        function getFeedback(score, total) {
+          const percentage = (score / total) * 100;
+          if (percentage === 100) return "Perfect! 🥇 You're a quiz master!";
+          if (percentage >= 70) return "Great job! 🏆 Keep up the good work!";
+          if (percentage >= 50)
+            return "Good effort! 👍 Try for a higher score next time!";
+          return "Keep practicing! 💪 You'll get there!";
+        }
+      });
+    </script>
+  </body>
 </html>
