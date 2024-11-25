@@ -5,13 +5,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz Website</title>
-    <link rel="stylesheet" href="Main.css" />
+    <link rel="stylesheet" href="Main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 
 <body>
     <header>
-        <div class="logo">Quizify</div>
+        <!-- Make the logo clickable and redirect to the home page -->
+        <div class="logo">
+            <a href="./Main.html">Quizify</a>
+        </div>
         <nav>
             <ul>
                 <li id="loginLink"><a href="./login.html">Login</a></li>
@@ -121,57 +124,78 @@
 
     <script>
         function isLoggedIn() {
+            // Check session storage for login status
             return sessionStorage.getItem("loggedIn") === "true";
         }
-
-        if (isLoggedIn()) {
-            document.getElementById("loginLink").style.display = "none";
-        }
-
+    
+        document.addEventListener("DOMContentLoaded", function () {
+            // Check if the user is logged in
+            if (isLoggedIn()) {
+                // Hide the Login and Register links
+                document.getElementById("loginLink").style.display = "none";
+                document.querySelector('nav ul li:nth-child(2)').style.display = "none"; // Hides Register button
+    
+                // Add Logout button dynamically
+                const logoutItem = document.createElement("li");
+                logoutItem.innerHTML = `<a href="#" id="logoutLink">Logout</a>`;
+                document.querySelector("nav ul").appendChild(logoutItem);
+    
+                // Add event listener for Logout
+                document.getElementById("logoutLink").addEventListener("click", function () {
+                    sessionStorage.removeItem("loggedIn");
+                    window.location.reload(); // Reload the page after logout
+                });
+            }
+    
+            // Reattach event listeners for Leaderboard and About
+            document.getElementById("leaderboardLink").addEventListener("click", function () {
+                document.querySelector(".quiz-categories").style.display = "none";
+                document.querySelector(".featured-quiz").style.display = "none";
+                document.getElementById("leaderboard-section").style.display = "block";
+                document.getElementById("about-section").style.display = "none";
+    
+                fetchLeaderboard();  // Fetch the leaderboard when the leaderboard link is clicked
+            });
+    
+            document.getElementById("aboutLink").addEventListener("click", function () {
+                document.querySelector(".quiz-categories").style.display = "none";
+                document.querySelector(".featured-quiz").style.display = "none";
+                document.getElementById("about-section").style.display = "block";
+                document.getElementById("leaderboard-section").style.display = "none";
+            });
+        });
+    
         function startQuiz(quizName) {
             if (isLoggedIn()) {
-                window.location.href = `index.html?category=${encodeURIComponent(
-                    quizName
-                )}`;
+                window.location.href = `index.html?category=${encodeURIComponent(quizName)}`;
             } else {
                 alert("Please log in to start the quiz.");
                 window.location.href = "./login.html";
             }
         }
-
-        document.getElementById("leaderboardLink").addEventListener("click", function () {
-            document.querySelector(".quiz-categories").style.display = "none";
-            document.querySelector(".featured-quiz").style.display = "none";
-            document.getElementById("leaderboard-section").style.display = "block";
-            document.getElementById("about-section").style.display = "none";
-            fetchLeaderboard();
-        });
-
-        document.getElementById("aboutLink").addEventListener("click", function () {
-            document.querySelector(".quiz-categories").style.display = "none";
-            document.querySelector(".featured-quiz").style.display = "none";
-            document.getElementById("about-section").style.display = "block";
-            document.getElementById("leaderboard-section").style.display = "none";
-        });
-
-        async function fetchLeaderboard() {
-            try {
-                const response = await fetch('http://localhost:3000/leaderboard');
-                const leaderboard = await response.json();
-
-                const leaderboardContainer = document.getElementById("leaderboard");
-                leaderboardContainer.innerHTML = "";
-
-                leaderboard.forEach((user, index) => {
-                    const userElement = document.createElement("div");
-                    userElement.innerHTML = `<p>${index + 1}. ${user.username} - ${user.score}</p>`;
-                    leaderboardContainer.appendChild(userElement);
-                });
-            } catch (error) {
-                console.error("Error fetching leaderboard:", error);
-            }
+    
+        // Fake leaderboard data (replace this with your actual data)
+        const leaderboardData = [
+            { username: "Jarvis", score: 8 },
+            { username: "Sarthak", score: 9 },
+            { username: "Tester", score: 7 },
+            { username: "Solo", score: 5 },
+            { username: "Noise", score: 6 },
+        ];
+    
+        function fetchLeaderboard() {
+            // Simulating fetching leaderboard data
+            const leaderboardContainer = document.getElementById("leaderboard");
+            leaderboardContainer.innerHTML = "";
+    
+            leaderboardData.forEach((user, index) => {
+                const userElement = document.createElement("div");
+                userElement.innerHTML = `<p>${index + 1}. ${user.username} - ${user.score}</p>`;
+                leaderboardContainer.appendChild(userElement);
+            });
         }
     </script>
+    
 </body>
 
 </html>
