@@ -3,16 +3,16 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
-const User = require('./models/User'); // Ensure that User schema is properly defined
-const Question = require('./models/Question'); // Import the Question model
+const User = require('./models/User'); 
+const Question = require('./models/Question');
+const Test = require('./models/test');
 
 const app = express();
-const JWT_SECRET = 'secret123'; // Store securely in an environment variable
+const JWT_SECRET = 'secret123';
 
 app.use(cors());
 app.use(express.json());
 
-// Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/quizzify', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -20,23 +20,19 @@ mongoose.connect('mongodb://localhost:27017/quizzify', {
 .then(() => console.log('MongoDB connected'))
 .catch(err => console.log(err));
 
-// Register route
 app.post('/api/register', async (req, res) => {
     const { username, email, password } = req.body;
 
     try {
-        // Check if user already exists
         const existingUser = await User.findOne({ email });
         if (existingUser) {
             return res.status(400).json({ status: 'error', error: 'Email already registered' });
         }
 
-        // Hash the password and create a new user
         const hashedPassword = await bcrypt.hash(password, 10);
         const newUser = new User({ username, email, password: hashedPassword });
         await newUser.save();
 
-        // Generate JWT token
         const token = jwt.sign({ email: newUser.email }, JWT_SECRET);
         res.json({ status: 'ok', message: 'User registered successfully', token });
     } catch (err) {
@@ -45,7 +41,6 @@ app.post('/api/register', async (req, res) => {
     }
 });
 
-// Login route
 app.post('/api/login', async (req, res) => {
     const { email, password } = req.body;
 
@@ -55,13 +50,11 @@ app.post('/api/login', async (req, res) => {
             return res.status(400).json({ status: 'error', error: 'Invalid login credentials' });
         }
 
-        // Compare the hashed password
         const isPasswordValid = await bcrypt.compare(password, user.password);
         if (!isPasswordValid) {
             return res.status(400).json({ status: 'error', error: 'Invalid login credentials' });
         }
 
-        // Generate JWT token
         const token = jwt.sign({ email: user.email }, JWT_SECRET);
         res.json({ status: 'ok', token });
     } catch (err) {
@@ -70,7 +63,6 @@ app.post('/api/login', async (req, res) => {
     }
 });
 
-// Route to get all questions
 app.get('/api/questions', async (req, res) => {
     try {
         const questions = await Question.find();
@@ -80,8 +72,25 @@ app.get('/api/questions', async (req, res) => {
         res.status(500).json({ status: 'error', error: 'Failed to retrieve questions' });
     }
 });
+app.post('/api/create-test', async (req, res) => {
+    const { testName, createdBy, category, difficulty, questions } = req.body;
 
-// Start server
+    try {
+        const newTest = new Test({
+            testName,
+            createdBy,
+            category,
+            difficulty,
+            questions,
+        });
+
+        await newTest.save();
+        res.status(201).json({ message: 'Test created successfully!' });
+    } catch (err) {
+        res.status(400).json({ message: 'Error creating test', error: err.message });
+    }
+});
+
 app.listen(5000, () => {
     console.log('Server is running on port 5000');
 });

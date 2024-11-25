@@ -1,201 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz Website</title>
-    <link rel="stylesheet" href="Main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-</head>
+    <link rel="stylesheet" href="Main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
 
-<body>
+  <body>
     <header>
-        <!-- Make the logo clickable and redirect to the home page -->
-        <div class="logo">
-            <a href="./Main.html">Quizify</a>
-        </div>
-        <nav>
-            <ul>
-                <li id="loginLink"><a href="./login.html">Login</a></li>
-                <li><a href="./register.html">Register</a></li>
-                <li><a href="#" id="leaderboardLink">Leaderboard</a></li>
-                <li><a href="#" id="aboutLink">About</a></li>
-            </ul>
-        </nav>
+      <div class="logo">
+        <a href="./Main.html">Quizify</a>
+      </div>
+
+      <nav>
+        <ul>
+          <li id="loginLink"><a href="./login.html">Login</a></li>
+          <li><a href="./register.html">Register</a></li>
+          <li><a href="#" id="leaderboardLink">Leaderboard</a></li>
+          <li><a href="#" id="aboutLink">About</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
-        <section class="quiz-categories">
-            <h2>Explore Quizzes</h2>
-            <ul>
-                <li>
-                    <img src="./images for project/history.jpg" alt="History" />
-                    <h3>History</h3>
-                    <p>Test your knowledge of historical events and figures</p>
-                    <button class="outline-button" onclick="startQuiz('History')">
-                        Start Quiz
-                    </button>
-                </li>
-                <li>
-                    <img src="./images for project/science.png" alt="Science" />
-                    <h3>Science</h3>
-                    <p>Explore the wonders of science and technology</p>
-                    <button class="outline-button" onclick="startQuiz('Science')">
-                        Start Quiz
-                    </button>
-                </li>
-                <li>
-                    <img src="./images for project/sports.jfif" alt="Sports" />
-                    <h3>Sports</h3>
-                    <p>Put your sports knowledge to the test</p>
-                    <button class="outline-button" onclick="startQuiz('Sports')">
-                        Start Quiz
-                    </button>
-                </li>
-                <li>
-                    <img src="./images for project/lit.png" alt="Literature" />
-                    <h3>Literature</h3>
-                    <p>Challenge your knowledge of literature genres and authors.</p>
-                    <button class="outline-button" onclick="startQuiz('Literature')">
-                        Start Quiz
-                    </button>
-                </li>
-            </ul>
-        </section>
-        <section class="featured-quiz">
-            <h2>Featured Quiz</h2>
-            <img src="./images for project/bollywood.png" alt="Featured Quiz" />
-            <h3>The Ultimate Movie Trivia</h3>
-            <p>Test your knowledge of movies and film history</p>
-            <button class="outline-button" onclick="startQuiz('Ultimate Movie Trivia')">
-                Start Quiz
+      <div id="test-buttons" class="test-buttons">
+        <button class="owntest" onclick="redirectToCreateTest()">
+            Design Your Quiz
+        </button>
+        <button class="owntest" onclick="redirectToTest()">Existing Quizzes</button>
+      </div>
+      <section class="quiz-categories">
+        <h2>Explore Quizzes</h2>
+        <ul>
+          <li>
+            <img src="./images for project/history.jpg" alt="History" />
+            <h3>History</h3>
+            <p>Test your knowledge of historical events and figures</p>
+            <button class="outline-button" onclick="startQuiz('History')">
+              Start Quiz
             </button>
-        </section>
+          </li>
+          <li>
+            <img src="./images for project/science.png" alt="Science" />
+            <h3>Science</h3>
+            <p>Explore the wonders of science and technology</p>
+            <button class="outline-button" onclick="startQuiz('Science')">
+              Start Quiz
+            </button>
+          </li>
+          <li>
+            <img src="./images for project/sports.jfif" alt="Sports" />
+            <h3>Sports</h3>
+            <p>Put your sports knowledge to the test</p>
+            <button class="outline-button" onclick="startQuiz('Sports')">
+              Start Quiz
+            </button>
+          </li>
+          <li>
+            <img src="./images for project/lit.png" alt="Literature" />
+            <h3>Literature</h3>
+            <p>Challenge your knowledge of literature genres</p>
+            <button class="outline-button" onclick="startQuiz('Literature')">
+              Start Quiz
+            </button>
+          </li>
+        </ul>
+      </section>
+      <section class="featured-quiz">
+        <h2>Featured Quiz</h2>
+        <img src="./images for project/bollywood.png" alt="Featured Quiz" />
+        <h3>The Ultimate Movie Trivia</h3>
+        <p>Test your knowledge of movies and film history</p>
+        <button
+          class="outline-button"
+          onclick="startQuiz('Ultimate Movie Trivia')"
+        >
+          Start Quiz
+        </button>
+      </section>
 
-        <section id="leaderboard-section" style="display: none;">
-            <h2>Leaderboard</h2>
-            <div id="leaderboard"></div>
-        </section>
-        <section id="about-section" style="display: none;">
-            <h2>About Quizify</h2>
-            <p>
-                Welcome to Quizify, the ultimate platform where you can challenge yourself with quizzes across various topics. Whether you're passionate about history, science, sports, or literature, we have something for everyone. 
-            </p>
-            <p>
-                Our goal is to make learning fun, interactive, and engaging. With each quiz you take, you’ll not only test your knowledge but also improve it, as you dive deeper into the content you enjoy the most. Whether you're preparing for an exam, brushing up on general knowledge, or just having fun, Quizify is your go-to place for all things trivia.
-            </p>
-            <p>
-                We offer quizzes in multiple categories, each designed to be both challenging and informative. From ancient history to modern science, from your favorite sports to classic literature, Quizify covers a wide range of topics. Our quizzes are designed by experts and tested by quiz enthusiasts to ensure the best experience.
-            </p>
-            <p>
-                What makes Quizify unique? We provide a dynamic and engaging experience. You can compete on our global leaderboard, track your progress, and even challenge your friends to beat your scores. Our quizzes are updated regularly with new content, so there’s always something new to discover.
-            </p>
-            <p>
-                Whether you're here to learn, have fun, or both, Quizify is dedicated to providing the best quiz experience on the web. Join us today, and become part of our growing community of trivia lovers!
-            </p>
-        
-            <h3>Connect with Us</h3>
-            <p>
-                Stay connected and updated with Quizify’s latest quizzes, challenges, and news through our social media channels. Follow us on Twitter, Instagram, Facebook, LinkedIn, and GitHub for updates, exclusive content, and more.
-            </p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/sarthak-sinha-9b8535324/" target="_blank" class="social-icon" title="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/sarthaksinha2003" target="_blank" class="social-icon" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://twitter.com" target="_blank" class="social-icon" title="Twitter">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://instagram.com" target="_blank" class="social-icon" title="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://facebook.com" target="_blank" class="social-icon" title="Facebook">
-                    <i class="fab fa-facebook"></i>
-                </a>
-            </div>
-        </section>
-        
+      <section id="leaderboard-section" style="display: none">
+        <h2>Leaderboard</h2>
+        <div id="leaderboard"></div>
+      </section>
+      <section id="about-section" style="display: none">
+        <h2>About Quizify</h2>
+        <p>
+          Welcome to Quizify, the ultimate platform where you can challenge
+          yourself with quizzes across various topics. Whether you're passionate
+          about history, science, sports, or literature, we have something for
+          everyone.
+        </p>
+        <p>
+          Our goal is to make learning fun, interactive, and engaging. With each
+          quiz you take, you’ll not only test your knowledge but also improve
+          it, as you dive deeper into the content you enjoy the most. Whether
+          you're preparing for an exam, brushing up on general knowledge, or
+          just having fun, Quizify is your go-to place for all things trivia.
+        </p>
+        <p>
+          We offer quizzes in multiple categories, each designed to be both
+          challenging and informative. From ancient history to modern science,
+          from your favorite sports to classic literature, Quizify covers a wide
+          range of topics. Our quizzes are designed by experts and tested by
+          quiz enthusiasts to ensure the best experience.
+        </p>
+        <p>
+          What makes Quizify unique? We provide a dynamic and engaging
+          experience. You can compete on our global leaderboard, track your
+          progress, and even challenge your friends to beat your scores. Our
+          quizzes are updated regularly with new content, so there’s always
+          something new to discover.
+        </p>
+        <p>
+          Whether you're here to learn, have fun, or both, Quizify is dedicated
+          to providing the best quiz experience on the web. Join us today, and
+          become part of our growing community of trivia lovers!
+        </p>
+
+        <h3>Connect with Us</h3>
+        <p>
+          Stay connected and updated with Quizify’s latest quizzes, challenges,
+          and news through our social media channels. Follow us on Twitter,
+          Instagram, Facebook, LinkedIn, and GitHub for updates, exclusive
+          content, and more.
+        </p>
+        <div class="social-links">
+          <a
+            href="https://www.linkedin.com/in/sarthak-sinha-9b8535324/"
+            target="_blank"
+            class="social-icon"
+            title="LinkedIn"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a
+            href="https://github.com/sarthaksinha2003"
+            target="_blank"
+            class="social-icon"
+            title="GitHub"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            class="social-icon"
+            title="Twitter"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            class="social-icon"
+            title="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            class="social-icon"
+            title="Facebook"
+          >
+            <i class="fab fa-facebook"></i>
+          </a>
+        </div>
+      </section>
     </main>
     <footer>
-        <p>&copy; 2024 Quizzify</p>
+      <p>&copy; 2024 Quizzify</p>
     </footer>
 
     <script>
-        function isLoggedIn() {
-            // Check session storage for login status
-            return sessionStorage.getItem("loggedIn") === "true";
-        }
-    
-        document.addEventListener("DOMContentLoaded", function () {
-            // Check if the user is logged in
-            if (isLoggedIn()) {
-                // Hide the Login and Register links
-                document.getElementById("loginLink").style.display = "none";
-                document.querySelector('nav ul li:nth-child(2)').style.display = "none"; // Hides Register button
-    
-                // Add Logout button dynamically
-                const logoutItem = document.createElement("li");
-                logoutItem.innerHTML = `<a href="#" id="logoutLink">Logout</a>`;
-                document.querySelector("nav ul").appendChild(logoutItem);
-    
-                // Add event listener for Logout
-                document.getElementById("logoutLink").addEventListener("click", function () {
-                    sessionStorage.removeItem("loggedIn");
-                    window.location.reload(); // Reload the page after logout
-                });
-            }
-    
-            // Reattach event listeners for Leaderboard and About
-            document.getElementById("leaderboardLink").addEventListener("click", function () {
-                document.querySelector(".quiz-categories").style.display = "none";
-                document.querySelector(".featured-quiz").style.display = "none";
-                document.getElementById("leaderboard-section").style.display = "block";
-                document.getElementById("about-section").style.display = "none";
-    
-                fetchLeaderboard();  // Fetch the leaderboard when the leaderboard link is clicked
-            });
-    
-            document.getElementById("aboutLink").addEventListener("click", function () {
-                document.querySelector(".quiz-categories").style.display = "none";
-                document.querySelector(".featured-quiz").style.display = "none";
-                document.getElementById("about-section").style.display = "block";
-                document.getElementById("leaderboard-section").style.display = "none";
-            });
-        });
-    
-        function startQuiz(quizName) {
-            if (isLoggedIn()) {
-                window.location.href = `index.html?category=${encodeURIComponent(quizName)}`;
-            } else {
-                alert("Please log in to start the quiz.");
-                window.location.href = "./login.html";
-            }
-        }
-    
-        // Fake leaderboard data (replace this with your actual data)
-        const leaderboardData = [
-            { username: "Jarvis", score: 8 },
-            { username: "Sarthak", score: 9 },
-            { username: "Tester", score: 7 },
-            { username: "Solo", score: 5 },
-            { username: "Noise", score: 6 },
-        ];
-    
-        function fetchLeaderboard() {
-            // Simulating fetching leaderboard data
-            const leaderboardContainer = document.getElementById("leaderboard");
-            leaderboardContainer.innerHTML = "";
-    
-            leaderboardData.forEach((user, index) => {
-                const userElement = document.createElement("div");
-                userElement.innerHTML = `<p>${index + 1}. ${user.username} - ${user.score}</p>`;
-                leaderboardContainer.appendChild(userElement);
-            });
-        }
-    </script>
-    
-</body>
+      function redirectToCreateTest() {
+        window.location.href = "./create-test.html";
+      }
+      function redirectToTest() {
+        window.location.href = "./select-test.html";
+      }
+      function isLoggedIn() {
+        return sessionStorage.getItem("loggedIn") === "true";
+      }
 
+      document.addEventListener("DOMContentLoaded", function () {
+        if (isLoggedIn()) {
+          document.getElementById("loginLink").style.display = "none";
+          document.querySelector("nav ul li:nth-child(2)").style.display =
+            "none";
+
+          const logoutItem = document.createElement("li");
+          logoutItem.innerHTML = `<a href="#" id="logoutLink">Logout</a>`;
+          document.querySelector("nav ul").appendChild(logoutItem);
+
+          document
+            .getElementById("logoutLink")
+            .addEventListener("click", function () {
+              sessionStorage.removeItem("loggedIn");
+              window.location.reload();
+            });
+        }
+
+        document
+          .getElementById("leaderboardLink")
+          .addEventListener("click", function () {
+            document.getElementById("test-buttons").style.display = "none";
+            document.querySelector(".quiz-categories").style.display = "none";
+            document.querySelector(".featured-quiz").style.display = "none";
+            document.getElementById("leaderboard-section").style.display =
+              "block";
+            document.getElementById("about-section").style.display = "none";
+
+            fetchLeaderboard();
+          });
+
+        document
+          .getElementById("aboutLink")
+          .addEventListener("click", function () {
+            document.getElementById("test-buttons").style.display = "none";
+            document.querySelector(".quiz-categories").style.display = "none";
+            document.querySelector(".featured-quiz").style.display = "none";
+            document.getElementById("about-section").style.display = "block";
+            document.getElementById("leaderboard-section").style.display =
+              "none";
+          });
+      });
+
+      function startQuiz(quizName) {
+        if (isLoggedIn()) {
+          window.location.href = `index.html?category=${encodeURIComponent(
+            quizName
+          )}`;
+        } else {
+          alert("Please log in to start the quiz.");
+          window.location.href = "./login.html";
+        }
+      }
+
+      async function fetchLeaderboard() {
+        try {
+          const response = await fetch("http://localhost:4000/api/leaderboard");
+          const data = await response.json();
+          const leaderboardContainer = document.getElementById("leaderboard");
+          leaderboardContainer.innerHTML = "";
+
+          data.leaderboard.forEach((user, index) => {
+            const userElement = document.createElement("div");
+            userElement.innerHTML = `<p>${index + 1}. ${user.username} - ${
+              user.score
+            }</p>`;
+            leaderboardContainer.appendChild(userElement);
+          });
+        } catch (error) {
+          console.error("Error fetching leaderboard:", error);
+        }
+      }
+    </script>
+  </body>
 </html>

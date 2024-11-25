@@ -36,7 +36,7 @@ header {
 
 .outline-button:hover {
     border-color: #309e99;
-    background-color: #185061;
+    background-color: #5c5a5ae6;
 }
 
 .logo {
@@ -157,3 +157,26 @@ footer {
 .social-icon:hover {
     color: #309e99;
 }
+.test-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px auto;
+  }
+  
+  .owntest {
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #2537448a;
+    color: black;
+    border: none;
+    border-radius: 34px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .owntest:hover {
+    background-color: #33333300;
+    transform: scale(1.05);
+  }
+  

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Test</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to left, #253744, #e0ddd8);
+}
+.score-message {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: transparent;
+  color: black;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(to left, #253744, #e0ddd8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-top: 30px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  color: white;
+  border-radius: 4px;
+  background-color:  #3e5a6fbc;
+  margin-bottom: 20px;
+}
+
+.question {
+  padding: 15px;
+  background-color:  #3e5a6fbc;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.question p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.question h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.options {
+  padding: 5px 0;
+  margin-top: 10px;
+}
+
+.options span {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+button {
+  width: 50%;
+  margin-left: 25%;
+  padding: 12px;
+  background-color: #4b4949;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #5756565b;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 20px;
+  color: #555;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Select Your Test</h1>
+    <select id="testSelect">
+      <option value="">Select a test</option>
+    </select>
+    <form id="quizForm" style="display: none;">
+      <div id="testQuestions">
+        <!-- Questions will be displayed here -->
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <div class="loading" id="loadingMessage" style="display: none;">
+      Loading tests...
+    </div>
+    <div class="error" id="errorMessage" style="display: none;">
+      Error fetching data. Please try again.
+    </div>
+  </div>
+
+  <script>
+    // Show loading message
+    function showLoading(show) {
+      const loadingMessage = document.getElementById('loadingMessage');
+      const errorMessage = document.getElementById('errorMessage');
+      if (show) {
+        loadingMessage.style.display = 'block';
+        errorMessage.style.display = 'none';
+      } else {
+        loadingMessage.style.display = 'none';
+      }
+    }
+
+    // Fetch all tests
+    fetch('http://localhost:5005/quizzify/tests')
+      .then(response => response.json())
+      .then(tests => {
+        const testSelect = document.getElementById('testSelect');
+        tests.forEach(test => {
+          const option = document.createElement('option');
+          option.value = test._id;
+          option.textContent = test.testName;
+          testSelect.appendChild(option);
+        });
+        showLoading(false);
+      })
+      .catch(err => {
+        console.error('Error fetching tests:', err);
+        showLoading(false);
+        document.getElementById('errorMessage').style.display = 'block';
+      });
+
+    // Event listener for test selection
+    document.getElementById('testSelect').addEventListener('change', function() {
+      const testId = this.value;
+      if (testId) {
+        showLoading(true);
+        fetch(`http://localhost:5005/api/test-questions/${testId}`)
+          .then(response => response.json())
+          .then(questions => {
+            const testQuestionsDiv = document.getElementById('testQuestions');
+            testQuestionsDiv.innerHTML = '';  // Clear any previous questions
+            questions.forEach((question, index) => {
+              const questionDiv = document.createElement('div');
+              questionDiv.classList.add('question');
+              questionDiv.innerHTML = `
+                <h3>${question.questionText}</h3>
+                <div class="options">
+                  ${question.options.map((option, i) => `
+                    <label>
+                      <input type="radio" name="question${index}" value="${option}">
+                      ${option}
+                    </label>
+                  `).join('')}
+                </div>
+                <input type="hidden" name="correctAnswer${index}" value="${question.correctAnswer}">
+              `;
+              testQuestionsDiv.appendChild(questionDiv);
+            });
+            showLoading(false);
+            document.getElementById('quizForm').style.display = 'block';
+          })
+          .catch(err => {
+            console.error('Error fetching test questions:', err);
+            showLoading(false);
+            document.getElementById('errorMessage').style.display = 'block';
+          });
+      }
+    });
+    document.getElementById('quizForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  let score = 0;
+  const formData = new FormData(this);
+
+  // Filter only the 'question' fields to calculate total questions
+  const totalQuestions = [...formData.keys()].filter(key => key.startsWith('question')).length;
+
+  // Loop through each question and check if the answer is correct
+  formData.forEach((value, key) => {
+    if (key.startsWith('question')) {
+      const questionIndex = key.replace('question', '');
+      const correctAnswerElement = document.querySelector(`[name="correctAnswer${questionIndex}"]`);
+      const correctAnswer = correctAnswerElement ? correctAnswerElement.value.trim() : null;
+
+      console.log(`Question ${questionIndex} - Selected: ${value.trim()}, Correct: ${correctAnswer}`);
+
+      if (value.trim() === correctAnswer) {
+        score++;
+      }
+    }
+  });
+
+  // Display the score
+  const scoreMessage = document.createElement('div');
+  scoreMessage.classList.add('score-message');
+  scoreMessage.textContent = `You scored ${score} out of ${totalQuestions}`;
+  document.querySelector('.container').appendChild(scoreMessage);
+});
+
+
+
+  </script>
+
+</body>
+</html>

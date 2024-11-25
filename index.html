@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="hi">
-      <h1>Test Your Knowledge: Dive into the Ultimate Quiz Challenge!</h1>
+      <h1>Test Your Knowledge: Dive into the Challenge!</h1>
       <form id="quiz-form">
         <label for="num-questions">Number of questions:</label>
         <input type="number" id="num-questions" value="5" min="1" />
@@ -27,6 +27,9 @@
           <option value="multiple-choice">Multiple-choice</option>
           <option value="true-false">True-False</option>
         </select>
+        <br />
+        <label for="username">Your username for leaderboard (optional):</label>
+        <input type="text" id="username" placeholder="Your name" />
         <br />
         <div class="button-container">
           <button type="submit">Start Quiz</button>
@@ -50,7 +53,6 @@
         const scoreContainer = document.getElementById("score");
         let questions = [];
 
-        // Capture category from URL
         const urlParams = new URLSearchParams(window.location.search);
         const category = urlParams.get("category");
 
@@ -107,7 +109,9 @@
 
           questions.forEach((question, index) => {
             const questionElement = document.createElement("div");
-            questionElement.innerHTML = `<p>${index + 1}. ${question.questionText}</p>`;
+            questionElement.innerHTML = `<p>${index + 1}. ${
+              question.questionText
+            }</p>`;
 
             if (question.options) {
               question.options.forEach((option) => {
@@ -135,23 +139,68 @@
         function calculateScore() {
           let score = 0;
           questions.forEach((question, index) => {
-            const selectedOption = document.querySelector(`input[name="question-${index}"]:checked`);
-            if (selectedOption && selectedOption.value === question.correctAnswer) {
+            const selectedOption = document.querySelector(
+              `input[name="question-${index}"]:checked`
+            );
+            if (
+              selectedOption &&
+              selectedOption.value === question.correctAnswer
+            ) {
               score++;
             }
           });
 
+          let username = document.getElementById("username").value;
+          if (!username) {
+            username = "Guest Player"; 
+          }
+
+          if (username !== "Guest Player") {
+            async function submitScore(username, score) {
+              try {
+                const response = await fetch(
+                  "http://localhost:4000/api/leaderboard",
+                  {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ username, score }),
+                  }
+                );
+
+                const data = await response.json();
+                console.log(data.message);
+              } catch (error) {
+                console.error("Error submitting score:", error);
+              }
+            }
+
+            submitScore(username, score);
+          }
+
+          const feedbackMessage = getFeedback(score, questions.length);
+
+          let feedbackStyle = "color: green;";
+          if (score === questions.length) {
+            feedbackStyle = "color: gold;";
+          } else if (score >= questions.length * 0.7) {
+            feedbackStyle = "color: blue;";
+          } else if (score >= questions.length * 0.5) {
+            feedbackStyle = "color: orange;";
+          } else {
+            feedbackStyle = "color: red;";
+          }
+
           scoreContainer.innerHTML = `
-            <div class="score-content">
-                <br>
-                <h2> Your Score: </h2>
-                <p class="score-text">You scored <span>${score}</span> out of ${questions.length}!</p>
-                <p class="score-feedback">${getFeedback(score, questions.length)}</p>
-            </div>
-          `;
-          scoreContainer.classList.add("score-container-visible");
-          scoreContainer.style.display = 'block'; // Make sure the score container is visible
-          submitQuizButton.style.display = "none"; // Hide Submit button after submitting
+    <div class="score-content">
+      <h2>${username}, Your Score:</h2>
+      <p>You scored <span>${score}</span> out of ${questions.length}!</p>
+      <p class="score-feedback" style="${feedbackStyle}">${feedbackMessage}</p>
+    </div>
+  `;
+          scoreContainer.style.display = "block";
+          submitQuizButton.style.display = "none";
         }
 
         function getFeedback(score, total) {
